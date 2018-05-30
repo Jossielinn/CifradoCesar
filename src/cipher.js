@@ -1,64 +1,45 @@
 window.cipher = {
- // ...encode:(offset,string)=>{}
-  //decode:(offset,string)=>{}
-};
-let cipherCaesar = function(){
- let x=document.getElementById("textDeposit").value;
- let numberJump=parseInt(document.getElementById("textValuefixed").value);
- let finalEncode="";
-   
- for (i=0;i<x.length;i++) {  
-  a=x.charCodeAt(i);  
-  console.log(x.length);
-  if (a>=65 && a<=90){ 
-    out=String.fromCharCode((a-65+numberJump)%26+65);
-    finalEncode=finalEncode+out;
-  }
-  else if (a>=97 && a<=122) { 
-    out=String.fromCharCode((a-97+numberJump)%26+97);
-    finalEncode=finalEncode+out;
-   }
-  else {
-    out=String.fromCharCode(a);
-    finalEncode=finalEncode+out;
-  }
-    document.getElementById("showResult").value=finalEncode;
-  }
-}
-
-let decodeCaesar = function(){
-  let x=document.getElementById("showResult").value;
-  let numberJump=parseInt(document.getElementById("textValuefixed").value);
-  let finalDecode="";
-  for (i=0;i<x.length;i++) {  
-    a=x.charCodeAt(i);  
-    console.log(x.length);
-    
-    if (a>=65 && a<=90){ 
-      decodeBox=a-numberJump;
-
-      if (decodeBox<65){
-        out=String.fromCharCode(90-(65-decodeBox-1));
-      } else{
-        out=String.fromCharCode(decodeBox);
-      }
-      finalDecode=finalDecode+out;
-    }
-    else if (a>=97 && a<=122) {
-
-      decodeBox=a-numberJump;
-
-      if (decodeBox<97){
-        out=String.fromCharCode(122-(97-decodeBox-1));
-      } else{
-        out=String.fromCharCode(decodeBox);
-      }
-      finalDecode=finalDecode+out;
-     } else {
-      out=String.fromCharCode(a);
-      finalDecode=finalDecode+out;
+  encode:(offset,string)=>{
+    offset = parseInt(offset);
+    let finalEncode = "";
+    for(let i=0; i<string.length;i++){
+     let codeAscii = string.charCodeAt(i);
+ 
+     if (codeAscii>=65 && codeAscii<=122){
+       newLetter = String.fromCharCode((codeAscii-65+ offset)%26 + 65);
+       finalEncode += newLetter; //finalEncode = finalEncode+newLetter
      }
-
-      document.getElementById("showResultDecode").value=finalDecode;
+     else if (codeAscii>=97 && codeAscii<=122){
+       newLetter = String.fromCharCode((codeAscii-97+numberJump)%26+97);
+       finalEncode += newLetter; 
+     }
+     else {
+       newLetter = String.fromCharCode(codeAscii);
+       finalEncode += newLetter;
+     }
     }
-  }
+    return finalEncode;
+  },
+ 
+   decode:(offset,string) => {
+     offset = parseInt(offset);
+     let finalDecode = "";
+     for(let i=0; i<string.length;i++){
+      let codeAscii = string.charCodeAt(i);
+  
+      if (codeAscii>=65 && codeAscii<=122){
+        newLetter = String.fromCharCode((codeAscii-65- offset)%26 + 65);
+        finalDecode += newLetter; //finalDecode = finalEncode+newLetter
+      }
+      else if (codeAscii>=97 && codeAscii<=122){
+        newLetter = String.fromCharCode((codeAscii-97-offset)%26+97);
+        finalDecode += newLetter; 
+      }
+      else {
+        newLetter = String.fromCharCode(codeAscii);
+        finalDecode += newLetter;
+      }
+     }
+     return finalDecode;
+   }
+ };
