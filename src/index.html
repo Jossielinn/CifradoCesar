@@ -8,35 +8,28 @@
   <body>
     <h1>Cipher Caesar</h1>
     <div id="root">
-      <table action="" id="boxFirst">
-        <tr>
-          <td>Ingrese Texto a cifrar:</td>
-        </tr>
+      <div id="boxFirst">
         <tr>
           <td><textarea type="text" id="textDeposit" placeholder="Introduce aquí el texto a cifrar" rows="5" cols="60"></textarea></td>
         </tr>
-      </table>
-      <table action="" id="boxSecond">
+      </div>
+      <div action="" id="boxSecond">
         <tr>
           <td>Ingrese el numero de saltos:</td>
-          <td id="numberSelec"><input type="number" id="textValuefixed" maxlength="4"></td>
+          <td id="numberSelec"><input type="number" id="textValuefixed" min="1" maxlength="4"></td>
         </tr>
-      </table>
-      <table action="" id="boxThird">
+      </div>
+      <div id="boxThird">
         <tr>
           <td><input type="button" value="Cifrar" id="buttonEncode" ></td>
           <td><input type="button" value="Descifrar" id="buttonDecode"></td>
         </tr>
-        <tr>
-          <td>Texto Cifrado:</td>
-          <td>Texto Descifrado:</td>
-        </tr>
-        <tr>
+        <div id="boxResults">
           <td><textarea type="text" id="resultEncode" placeholder="Texto Cifrado" rows="5" cols="35"></textarea></td>
           
-          <td><textarea type="text" id="resultDecode" placeholder="Introduce aquí el texto a descifrar" rows="5" cols="35"></textarea></td>
-        </tr> 
-    </table>
+          <td><textarea type="text" id="resultDecode" placeholder="Texto descifrado" rows="5" cols="35"></textarea></td>
+        </div> 
+      </div>
     </div>
     <script src="cipher.js"></script>
     <script src="index.js"></script>

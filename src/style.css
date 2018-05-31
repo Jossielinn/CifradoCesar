@@ -1,31 +1,66 @@
+
 h1{
     text-align: center;
     margin:auto;
     font: italic bold 50px Georgia, serif;
-    color:brown;
+    color:#9C0121;
+    padding: 20px;
 }
+#root {
+    border: 2px solid #9C0121;
+    border-radius: 10px;
+    width:60%;
+    margin: auto;
+    background: #DBD7E0;
+    box-shadow:3px 4px 5px gray;
+}
+
 #boxFirst,#boxSecond,#boxThird{
-    padding:35px;
+    padding:5%;
     text-align: center;
-    font-size: 25px;
-    font: menu;
     margin:auto;
+    font:20px Segoe UI, serif;
 }
 input{
-    font: menu;
+    font-size:18px;
 }
-#buttonEncode,#buttonDecode,#textDeposit,#showResult,#showResultDecode{
+
+#buttonEncode,#buttonDecode,#textDeposit,#resultEncode,#resultDecode{
+    max-width:80%;
     border-radius:3px;
+    background: #DBD7E0;
+    font:20px Segoe UI, serif;
 }
+
+#buttonEncode, #buttonDecode{
+    background: #9C0121;
+    color: white;
+    box-shadow:2px  1px 3px brown; 
+}
+
+#buttonEncode:hover,#buttonDecode:hover{
+    background:white ;
+    color: #9C0121;
+}
+
 #textValuefixed{
     width:50px;
     height:30px;
     text-align: center;
 }
+
 #boxSecond{
     padding:10px;
 }
 
 #boxThird{
-    padding:15px;
+   margin: 50px auto;  
 }
+
+#textDeposit,#resultEncode,#resultDecode {
+    border: 0;
+    border-bottom: 3px solid brown; 
+}
+
+
+
