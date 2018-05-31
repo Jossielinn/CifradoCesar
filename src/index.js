@@ -1,5 +1,6 @@
-let string = document.getElementById("textInput");
-let offset = parseInt(document.getElementById("textValuefixed"));
+
+let string = document.getElementById("textDeposit");
+let offset = document.getElementById("textValuefixed");
 
 //Se aplica un evento para cada boton
 let btnEncode=document.getElementById("buttonEncode");

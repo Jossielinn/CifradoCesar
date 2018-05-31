@@ -1,12 +1,13 @@
 window.cipher = {
   encode:(offset,string)=>{
-    offset = parseInt(offset);
     let finalEncode = "";
+    let newLetter = "";
+    let numberJump = parseInt(offset);
     for(let i=0; i<string.length;i++){
      let codeAscii = string.charCodeAt(i);
  
-     if (codeAscii>=65 && codeAscii<=122){
-       newLetter = String.fromCharCode((codeAscii-65+ offset)%26 + 65);
+     if (codeAscii>=65 && codeAscii<=90){
+       newLetter = String.fromCharCode((codeAscii-65+ numberJump)%26 + 65);
        finalEncode += newLetter; //finalEncode = finalEncode+newLetter
      }
      else if (codeAscii>=97 && codeAscii<=122){
@@ -22,18 +23,30 @@ window.cipher = {
   },
  
    decode:(offset,string) => {
-     offset = parseInt(offset);
      let finalDecode = "";
-     for(let i=0; i<string.length;i++){
+     let decodeBox="";
+     let newLetter = "";
+     let numberJump = parseInt(offset);
+     for(let i=0; i<string.length; i++){
       let codeAscii = string.charCodeAt(i);
   
-      if (codeAscii>=65 && codeAscii<=122){
-        newLetter = String.fromCharCode((codeAscii-65- offset)%26 + 65);
-        finalDecode += newLetter; //finalDecode = finalEncode+newLetter
+      if (codeAscii>=65 && codeAscii<=90){
+        decodeBox=(codeAscii - numberJump % 26);
+
+        if (decodeBox<65){
+          decodeBox += 26; //decodeBox = decodeBox + 26;
+        }
+        newLetter=String.fromCharCode(decodeBox);
+        finalDecode += newLetter;
       }
       else if (codeAscii>=97 && codeAscii<=122){
-        newLetter = String.fromCharCode((codeAscii-97-offset)%26+97);
-        finalDecode += newLetter; 
+        decodeBox = (codeAscii - numberJump % 26);
+
+        if(decodeBox<97){
+          decodeBox +=26; //decodeBox = decodeBox + 26;
+        }
+        newLetter=String.fromCharCode(decodeBox);
+        finalDecode += newLetter;
       }
       else {
         newLetter = String.fromCharCode(codeAscii);
