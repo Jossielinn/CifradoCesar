@@ -3,7 +3,7 @@ window.cipher = {
     let finalEncode = "";
     let newLetter = "";
     let numberJump = parseInt(offset);
-    for(let i=0; i<string.length;i++){
+    for(let i=0; i<string.length;i++){ //for(let i of string){ }
      let codeAscii = string.charCodeAt(i);
  
      if (codeAscii>=65 && codeAscii<=90){
@@ -24,29 +24,19 @@ window.cipher = {
  
    decode:(offset,string) => {
      let finalDecode = "";
-     let decodeBox="";
+     //let decodeBox="";
      let newLetter = "";
      let numberJump = parseInt(offset);
      for(let i=0; i<string.length; i++){
       let codeAscii = string.charCodeAt(i);
-  
+      
       if (codeAscii>=65 && codeAscii<=90){
-        decodeBox=(codeAscii - numberJump % 26);
-
-        if (decodeBox<65){
-          decodeBox += 26; //decodeBox = decodeBox + 26;
-        }
-        newLetter=String.fromCharCode(decodeBox);
-        finalDecode += newLetter;
+        newLetter = String.fromCharCode((codeAscii-90-numberJump)%26 + 90);
+        finalDecode += newLetter; //finalDecode = finalDecode+newLetter
       }
       else if (codeAscii>=97 && codeAscii<=122){
-        decodeBox = (codeAscii - numberJump % 26);
-
-        if(decodeBox<97){
-          decodeBox +=26; //decodeBox = decodeBox + 26;
-        }
-        newLetter=String.fromCharCode(decodeBox);
-        finalDecode += newLetter;
+        newLetter = String.fromCharCode((codeAscii-122-numberJump)%26 + 122);
+        finalDecode += newLetter; 
       }
       else {
         newLetter = String.fromCharCode(codeAscii);
