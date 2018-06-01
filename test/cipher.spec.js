@@ -51,7 +51,7 @@ describe('cipher', () => {
     });
 
     it('debería retornar un objeto con dos funciones (encode y decode) con offset fijado', () => {
-      assert.equal(typeof cipher.createCipherWithOffset(5), 'object');
+      assert.equal(typeof cipher.createCipherWithOffset(1), 'object');
     });
 
   });

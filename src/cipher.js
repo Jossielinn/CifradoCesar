@@ -44,5 +44,17 @@ window.cipher = {
       }
      }
      return finalDecode;
-   }
+   },
+
+   createCipherWithOffset(offset) {
+    let resultObjet = {
+      encode:cipher.encode(offset, ""),
+      //encode:(string) => cipher.encode(offset, string),
+
+      decode:cipher.decode(offset, ""),
+      //decode:(string) => cipher.decode(offset, string),
+    }
+    return resultObjet;
+  }
+
  };

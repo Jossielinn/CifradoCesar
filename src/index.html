@@ -10,13 +10,13 @@
     <div id="root">
       <div id="boxFirst">
         <tr>
-          <td><textarea type="text" id="textDeposit" placeholder="Introduce aquí el texto a cifrar" rows="5" cols="60"></textarea></td>
+          <td><textarea id="textDeposit" placeholder="Introduce aquí el texto a cifrar" rows="5" cols="60"></textarea></td>
         </tr>
       </div>
-      <div action="" id="boxSecond">
+      <div id="boxSecond">
         <tr>
           <td>Ingrese el numero de saltos:</td>
-          <td id="numberSelec"><input type="number" id="textValuefixed" min="1" maxlength="4"></td>
+          <td><input type="number" id="textValuefixed" min="1"></td>
         </tr>
       </div>
       <div id="boxThird">
@@ -25,9 +25,8 @@
           <td><input type="button" value="Descifrar" id="buttonDecode"></td>
         </tr>
         <div id="boxResults">
-          <td><textarea type="text" id="resultEncode" placeholder="Texto Cifrado" rows="5" cols="35" readonly></textarea></td>
-          
-          <td><textarea type="text" id="resultDecode" placeholder="Texto descifrado" rows="5" cols="35" readonly></textarea></td>
+          <td><textarea id="resultEncode" placeholder="Texto Cifrado" rows="5" cols="35" readonly></textarea></td>
+          <td><textarea id="resultDecode" placeholder="Texto descifrado" rows="5" cols="35" readonly></textarea></td>
         </div> 
       </div>
     </div>
