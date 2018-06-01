@@ -17,7 +17,7 @@ h1{
     box-shadow:3px 4px 5px gray;
 }
 
-.boxContent, #boxResults{
+.boxContent{
     padding:30px;
     text-align: center;
     margin:auto;
@@ -36,6 +36,9 @@ h1{
     background: #9C0121;
     color: white;
     box-shadow:2px  1px 3px brown;
+    font-size: 20px;
+    border-radius: 8px;
+    padding: 5px;
 }
 
 /* Al pasar el mouse sobre cada boton */
@@ -55,8 +58,27 @@ textarea {
     border-bottom: 3px solid brown; 
 }
 
+#resultsEnDe textarea{
+    padding: 20px;
+    width: 40%;
+}
+
 @media only screen and (max-width: 600px) {
     #root {
         width:80%;
     }
+
+    #resultsEnDe textarea{
+        width: 60%;
+    }
+    
+}
+@media only screen and (max-width: 1200px) {
+    #root {
+        width:60%;
+    }
+    #resultsEnDe textarea{
+        width: 50%;
+    }
+    
 }
