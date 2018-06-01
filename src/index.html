@@ -8,28 +8,24 @@
   <body>
     <h1>Cipher Caesar</h1>
     <div id="root">
-      <div id="boxFirst">
-          <div>
-            <textarea id="textDeposit" placeholder="Introduce aquí el texto a cifrar" rows="5" cols="60"></textarea>
-          </div>
+      <div class="boxContent">
+      <textarea id="textDeposit" placeholder="Introduce aquí el texto a cifrar" rows="5" cols="60"></textarea>
       </div>
-      <div id="boxSecond">
-        <div>
-          <label>Ingrese el numero de saltos:</label>
-          <input type="number" id="textValuefixed" min="1">
-        </div>
+      <div class="boxContent">
+         <label>Ingrese el numero de saltos:</label>
+         <input type="number" id="textValuefixed" min="1">
       </div>
-      <div id="boxThird">
-        <div>
+      <div class="boxContent">
           <input type="button" value="Cifrar" id="buttonEncode" >
           <input type="button" value="Descifrar" id="buttonDecode">
         </div>
         <div id="boxResults">
-          <textarea id="resultEncode" placeholder="Texto Cifrado" rows="5" cols="35" readonly></textarea>
-          <textarea id="resultDecode" placeholder="Texto descifrado" rows="5" cols="35" readonly></textarea>
+         <div class="resultsEnDe">
+         <textarea id="resultEncode" placeholder="Texto Cifrado" rows="5" cols="35" readonly></textarea>
+         <textarea id="resultDecode" placeholder="Texto descifrado" rows="5" cols="35" readonly></textarea>
+          </div>
         </div> 
       </div>
-    </div>
     <script src="cipher.js"></script>
     <script src="index.js"></script>
   </body>

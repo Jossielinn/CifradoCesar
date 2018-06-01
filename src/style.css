@@ -1,4 +1,4 @@
-
+/* Titulo */
 h1{
     text-align: center;
     margin:auto;
@@ -6,38 +6,39 @@ h1{
     color:#9C0121;
     padding: 20px;
 }
+
+/* Contenido */
 #root {
     border: 2px solid #9C0121;
     border-radius: 10px;
-    width:60%;
+    width:40%;
     margin: auto;
     background: #DBD7E0;
     box-shadow:3px 4px 5px gray;
 }
 
-#boxFirst,#boxSecond,#boxThird{
-    padding:5%;
+.boxContent, #boxResults{
+    padding:30px;
     text-align: center;
     margin:auto;
     font:20px Segoe UI, serif;
 }
-input{
-    font-size:18px;
-}
 
 #buttonEncode,#buttonDecode,#textDeposit,#resultEncode,#resultDecode{
-    max-width:80%;
+    max-width:90%;
     border-radius:3px;
     background: #DBD7E0;
-    font:20px Segoe UI, serif;
+    font:18px Segoe UI, serif;
+    text-align: center;
 }
 
 #buttonEncode, #buttonDecode{
     background: #9C0121;
     color: white;
-    box-shadow:2px  1px 3px brown; 
+    box-shadow:2px  1px 3px brown;
 }
 
+/* Al pasar el mouse sobre cada boton */
 #buttonEncode:hover,#buttonDecode:hover{
     background:white ;
     color: #9C0121;
@@ -49,18 +50,13 @@ input{
     text-align: center;
 }
 
-#boxSecond{
-    padding:10px;
-}
-
-#boxThird{
-   margin: 50px auto;  
-}
-
-#textDeposit,#resultEncode,#resultDecode {
+textarea {
     border: 0;
     border-bottom: 3px solid brown; 
 }
 
-
-
+@media only screen and (max-width: 600px) {
+    #root {
+        width:80%;
+    }
+}
