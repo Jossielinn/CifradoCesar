@@ -1,20 +1,26 @@
 /* Titulo */
+
+body{
+    background: #2f3945;
+}
+
 h1{
+    /*background: rgba(255,255,255,0.2);*/
     text-align: center;
-    margin:auto;
+    margin:25px;
     font: italic bold 50px Georgia, serif;
-    color:#9C0121;
+    color: #F9FAF5;
     padding: 20px;
 }
 
 /* Contenido */
 #root {
-    border: 2px solid #9C0121;
+    border: 2px solid #fd8f03;
     border-radius: 10px;
     width:40%;
     margin: auto;
-    background: #DBD7E0;
-    box-shadow:3px 4px 5px gray;
+    background: #d8d2ca;
+    box-shadow:3px 4px 5px #F9FAF5;
 }
 
 .boxContent{
@@ -24,61 +30,57 @@ h1{
     font:20px Segoe UI, serif;
 }
 
-#buttonEncode,#buttonDecode,#textDeposit,#resultEncode,#resultDecode{
-    max-width:90%;
+.boxContent label{
+    color: #1F2B3E;
+    font-weight: bold;
+}
+
+#buttonEncode,#buttonDecode,#textDeposit,#resultCipher{
+    max-width:100%;
     border-radius:3px;
-    background: #DBD7E0;
-    font:18px Segoe UI, serif;
-    text-align: center;
+    font:20px Segoe UI;
 }
 
 #buttonEncode, #buttonDecode{
-    background: #9C0121;
+    background: #FA9017;
     color: white;
-    box-shadow:2px  1px 3px brown;
-    font-size: 20px;
     border-radius: 8px;
-    padding: 5px;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 /* Al pasar el mouse sobre cada boton */
 #buttonEncode:hover,#buttonDecode:hover{
     background:white ;
-    color: #9C0121;
+    color: #fd8f03;
 }
 
 #textValuefixed{
     width:50px;
     height:30px;
+    font-size: 20px;
     text-align: center;
+    border-color: #fd8f03;
+    border-radius: 5px;
 }
 
 textarea {
     border: 0;
-    border-bottom: 3px solid brown; 
-}
-
-#resultsEnDe textarea{
-    padding: 20px;
-    width: 40%;
+    resize: none;
+    border-bottom: 3px solid #fd8f03; 
+    color: #1F2B3E;
+    background: #d8d2ca;
 }
 
 @media only screen and (max-width: 600px) {
     #root {
         width:80%;
     }
-
-    #resultsEnDe textarea{
-        width: 60%;
-    }
-    
 }
 @media only screen and (max-width: 1200px) {
     #root {
         width:60%;
     }
-    #resultsEnDe textarea{
-        width: 50%;
-    }
-    
+   
 }
